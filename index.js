@@ -141,3 +141,12 @@ function isAnyPartTimeWage(dailyWage) {
     return dailyWage.includes("80");
 }
 console.log("UC7F - Check If Any Part Time Wage: " + mapDayWithWageArr.some(isAnyPartTimeWage));
+
+// UC7G - Find the number of days the Employee Worked
+function totalDaysWorked(numOfDays,dailyWage) {
+    if(dailyWage>0){
+        return numOfDays+1;
+    }
+    return numOfDays;
+}
+console.log("UC7G - Number of Days Emp Worked: " + empDailyWageArr.reduce(totalDaysWorked,0));
