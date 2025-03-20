@@ -135,3 +135,9 @@ function isAllFullTimeWage(dailyWage) {
     return dailyWage.includes("160");
 }
 console.log("UC7E - Check All Element have Full Time Wage: " + fullDayWageArr.every(isAllFullTimeWage));
+
+// UC7F - Check if there is any Part Time Wage
+function isAnyPartTimeWage(dailyWage) {
+    return dailyWage.includes("80");
+}
+console.log("UC7F - Check If Any Part Time Wage: " + mapDayWithWageArr.some(isAnyPartTimeWage));
