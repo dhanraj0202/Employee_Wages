@@ -69,6 +69,7 @@ for(let day = 0; day < NUM_OF_WORKING_DAYS; day++){
 const MAX_HRS_IN_MONTH = 160;
 let totalEmpHrs = 0;
 let totalWorkingDays = 0;
+let empDailyHrsAndWageArr = new Array();
 // while(totalEmpHrs<=MAX_HRS_IN_MONTH && totalWorkingDays<NUM_OF_WORKING_DAYS){
 //     totalWorkingDays++;
 //     let empCheck = Math.floor(Math.random()*10)%3;
@@ -90,10 +91,19 @@ while(totalEmpHrs<=MAX_HRS_IN_MONTH && totalWorkingDays<NUM_OF_WORKING_DAYS){
     let empCheck = Math.floor(Math.random()*10)%3;
     let empHrs = getWorkingHours(empCheck);
     totalEmpHrs += empHrs;
-    empDailyWageArr.push(calcDailyWage(empHrs));
-    empDailyWageMap.set(totalWorkingDays, calcDailyWage(empHrs));
-    empDailyHrsMap.set(totalWorkingDays, empHrs);
+    empDailyHrsAndWageArr.push(
+        {
+            dayNum:totalWorkingDays,
+            dailyHours:empHrs,
+            dailyWage:calcDailyWage(empHrs),
+            toString(){
+                return '\nDay' + this.dayNum + ' => Working Hours is ' + this.dailyHours + ' And Wage Earned ' + this.dailyWage
+            },
+        }
+    );
 }
+console.log("UC10 Showing Daily Hours Worked and Wage Earned: "+ empDailyHrsAndWageArr);
+
 let empWage = calcDailyWage(totalEmpHrs);
 // console.log("UC6 - Total Days: " + totalWorkingDays +" Total Hrs: " + totalEmpHrs + " Emp Wage: " + empWage);
 
