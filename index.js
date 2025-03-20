@@ -1,7 +1,7 @@
 // UC1 (Employee Presence)
 const IS_ABSENT = 0;
 
-// let empCheck = Math.floor(Math.random()*10)%2;
+let empCheck = Math.floor(Math.random()*10)%3;
 if (empCheck == IS_ABSENT) {
     console.log("Employee is Absent");
     return;
@@ -9,6 +9,8 @@ if (empCheck == IS_ABSENT) {
 else{
     console.log("Employee is Present");
 }
+// console.log(empCheck);
+
 
 // UC2 (Employee Wage)
 const IS_PART_TIME = 1;
@@ -18,7 +20,7 @@ const FULL_TIME_HOURS = 8;
 const WAGE_PER_HOUR = 20;
 
 // let empHrs = 0;
-// empCheck = Math.floor(Math.random()*10)%3;
+// let empCheck = Math.floor(Math.random()*10)%3;
 // console.log(empCheck);
 // switch(empCheck){
 //     case IS_PART_TIME:
@@ -57,7 +59,7 @@ const NUM_OF_WORKING_DAYS = 20;
 let empHrs = 0;
 
 for(let day = 0; day < NUM_OF_WORKING_DAYS; day++){
-    var empCheck = Math.floor(Math.random()*10)%3;
+    let empCheck = Math.floor(Math.random()*10)%3;
     empHrs += getWorkingHours(empCheck);
 }
 // let empWage = empHrs*WAGE_PER_HOUR;
@@ -69,7 +71,7 @@ let totalEmpHrs = 0;
 let totalWorkingDays = 0;
 while(totalEmpHrs<=MAX_HRS_IN_MONTH && totalWorkingDays<NUM_OF_WORKING_DAYS){
     totalWorkingDays++;
-    var empCheck = Math.floor(Math.random()*10)%3;
+    let empCheck = Math.floor(Math.random()*10)%3;
     totalEmpHrs += getWorkingHours(empCheck);
 }
 
